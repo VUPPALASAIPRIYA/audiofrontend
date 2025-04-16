@@ -1,0 +1,415 @@
+:root {
+  --primary-color: #800000; /* Maroon */
+  --accent-color: #FFD700; /* Gold */
+  --background-color: #FFFFFF; /* White */
+  --secondary-background-color: #F5F5F5; /* Light Gray */
+  --text-color: #333333; /* Dark Gray for text */
+  --text-secondary-color: #666666; /* Medium Gray for less important text */
+  --border-color: #CCCCCC; /* Light border color */
+  --border-radius: 8px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-regular: 1rem; /* 16px */
+  --font-size-medium: 1.125rem; /* 18px */
+  --font-size-large: 1.5rem; /* 24px */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-duration: 0.2s ease-in-out;
+}
+
+/* Base Styles for Body - Responsive Font and Padding */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: var(--spacing-medium); /* Consistent padding */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+}
+
+/* App Container - Centering and Basic Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center the content */
+  padding: var(--spacing-large);
+}
+
+/* App Title - Prominent Heading */
+.app-title {
+  color: var(--primary-color);
+  font-size: 2.5rem; /* Larger font size for prominence */
+  font-weight: bold; /* Make it stand out */
+  margin-bottom: var(--spacing-large); /* Spacing below the title */
+  text-align: center; /* Center the title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+  animation: fadeInTitle 1s ease-out forwards; /* Optional: Fade-in animation */
+}
+
+/* Optional: Fade-in animation for App Title */
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Auth Container (General for Login & Faculty Signup) */
+.auth-container {
+  background-color: var(--secondary-background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-large);
+  width: 100%;
+  max-width: 400px; /* Consistent max-width for auth forms */
+  margin-bottom: var(--spacing-large);
+  text-align: center;
+}
+
+.auth-container h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-medium);
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Make form elements take full width */
+}
+
+.auth-container input {
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-regular);
+  box-sizing: border-box; /* Ensure padding doesn't increase width */
+}
+
+.auth-container button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-medium);
+  font-size: var(--font-size-regular);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.auth-container button:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.auth-container .error-message {
+  color: red;
+  margin-top: var(--spacing-small);
+  font-size: var(--font-size-small);
+  text-align: center;
+}
+
+.auth-container p {
+  margin-top: var(--spacing-medium);
+  font-size: var(--font-size-small);
+  color: var(--text-secondary-color);
+  text-align: center;
+}
+
+.auth-container p a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 var(--spacing-small);
+}
+
+.auth-container p a:hover {
+  color: var(--accent-color);
+}
+
+/* Student Signup Container */
+.signup-container {
+  background-color: var(--secondary-background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-large);
+  width: 100%;
+  max-width: 450px; /* Slightly wider for more fields */
+  margin: 50px auto;
+  text-align: center;
+}
+
+.signup-container h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-medium);
+}
+
+.signup-container .error {
+  color: red;
+  margin-bottom: var(--spacing-medium);
+  font-size: var(--font-size-small);
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.signup-container label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: var(--spacing-small);
+  color: var(--text-color);
+  font-size: var(--font-size-regular);
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.signup-container select {
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-large); /* Increased spacing */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-regular);
+  box-sizing: border-box;
+}
+
+.signup-container button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-medium);
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.signup-container button:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* Dashboard Container - Basic Layout */
+.dashboard-container {
+  width: 100%;
+  padding: var(--spacing-large);
+  background-color: var(--secondary-background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard-container h2,
+.dashboard-container h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-medium);
+  text-align: center;
+}
+
+/* Select Dropdown (Dashboard) */
+.hostel-select {
+  width: 100%;
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-regular);
+  box-sizing: border-box;
+}
+
+/* Audio Player */
+audio {
+  width: 100%;
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Sent Messages List */
+.dashboard-container h3 {
+  margin-top: var(--spacing-large);
+}
+
+.dashboard-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-container li {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-medium);
+  margin-bottom: var(--spacing-small);
+}
+
+.dashboard-container li strong {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.dashboard-container li p {
+  margin-top: var(--spacing-small);
+  font-size: var(--font-size-small);
+  color: var(--text-secondary-color);
+}
+
+/* Logout Button */
+.logout-button {
+  background-color: #dc3545; /* Red color for logout */
+  color: var(--background-color);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-medium);
+  font-size: var(--font-size-regular);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+  width: 100%;
+  margin-top: var(--spacing-large);
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+/* Send Button (Faculty Dashboard) */
+.send-button {
+  width: 100%;
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Recording Controls (Faculty Dashboard) */
+.record-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-medium);
+}
+
+.start-record-button,
+.stop-record-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-small);
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-regular);
+  transition: background-color var(--transition-duration);
+}
+
+.start-record-button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+}
+
+.start-record-button:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.stop-record-button {
+  background-color: #dc3545; /* Red for stop */
+  color: var(--background-color);
+  border: none;
+}
+
+.stop-record-button:hover {
+  background-color: #c82333;
+}
+
+.recording-indicator {
+  background-color: #ffc107; /* Yellow for recording */
+  color: var(--text-color);
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  margin-left: var(--spacing-medium);
+  font-size: var(--font-size-small);
+}
+
+/* Style the icons */
+.start-record-button svg,
+.stop-record-button svg {
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+/* Responsive Adjustments (Optional - for more tailored mobile views) */
+@media (max-width: 480px) {
+  body {
+    padding: var(--spacing-small);
+    font-size: var(--font-size-regular);
+  }
+
+  .app-container {
+    padding: var(--spacing-medium);
+  }
+
+  .app-title {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .auth-container,
+  .signup-container {
+    padding: var(--spacing-medium);
+  }
+
+  .auth-input,
+  .auth-button,
+  .hostel-select,
+  .logout-button,
+  .send-button,
+  .signup-container input[type="text"],
+  .signup-container input[type="password"],
+  .signup-container select,
+  .signup-container button {
+    padding: var(--spacing-small);
+    font-size: var(--font-size-small);
+  }
+
+  .signup-link {
+    font-size: 0.75rem;
+  }
+}
+
+/* Orientation Handling for Mobile Landscape (Example) */
+@media (orientation: landscape) and (max-width: 768px) {
+  .app-container {
+    /* Adjust layout for landscape if needed */
+    padding: var(--spacing-medium);
+  }
+
+  .auth-container,
+  .signup-container {
+    /* Adjust form layout in landscape if needed */
+    max-width: 500px; /* Example: Wider form in landscape */
+    padding: var(--spacing-medium);
+  }
+
+  /* You might need more specific adjustments based on your components */
+}
+
+/* Image Responsiveness (If you have images) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth Scroll Behavior (Optional) */
+html {
+  scroll-behavior: smooth;
+}
